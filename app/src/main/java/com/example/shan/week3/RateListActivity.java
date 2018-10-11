@@ -30,7 +30,7 @@ public class RateListActivity extends ListActivity implements Runnable{
         super.onCreate(savedInstanceState);
         //setContentView(R.layout.activity_rate_list);
 
-        ListAdapter adapter = new ArrayAdapter<String>(RateListActivity.this,android.R.layout);
+        ListAdapter adapter = new ArrayAdapter<String>(RateListActivity.this,android.R.layout.activity_list_item,list_data);
         setListAdapter(adapter);
 
         handler = new Handler(){
@@ -38,8 +38,8 @@ public class RateListActivity extends ListActivity implements Runnable{
             public void handleMessage(Message msg) {
                 if(msg.what == 5){
                 List<String> retList = (List<String>) msg.obj;
-                ListAdapter adapter = new ArrayAdapter<String>(RateListActivity.this, ;
-                    setListAdapter(adapter);
+                ListAdapter adapter = new ArrayAdapter<String>(RateListActivity.this,android.R.layout.activity_list_item,list_data);
+                setListAdapter(adapter);
                 Log.i("handler","reset list...");
             }
                 super.handleMessage(msg);
